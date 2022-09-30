@@ -4,28 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Apolo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="background">
-        <header>
-            <div class="hero">
-
+    <header>
+        <nav>
+            <div class="logo">
+                <h4>Kontolodon</h4>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">my collection</a></li>
-                    <li><a href="#">about me</a></li>
-                </ul>
-            </nav>
-            <button></button>
-        </header>
-    </div>
     
-    <div>
-        <h1>polo</h1>
-    </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Me</a></li>
+                <li><a href="">My Collection</a></li>
+                <li><a href="">Saran?</a></li>
+            </ul>
+    
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nisi accusantium recusandae architecto. Saepe quod, similique aspernatur quisquam eaque vitae quos alias in. Dicta qui perspiciatis incidunt fugiat sequi autem.lorem</p>
+        </div>
+    </main>
 
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide');
+        });
+    </script>
 </body>
 </html>

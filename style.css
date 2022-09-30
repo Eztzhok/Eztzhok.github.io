@@ -1,20 +1,138 @@
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
     
 }
-.hero {
-    background-image: url(assets/sele.jpg);
+header {
+    min-height: 100vh;
+    background: url(assets/app1.jpg) no-repeat;
+    background-size: cover;
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    
+} 
+nav {
+    display: flex;
+    
+    justify-content: space-between;
     height: 50px;
-    width: 50px;
+    align-items:center;
+    padding: 0 15px 0 15px;
 }
-.background {
-   background-image: url(assets/polo.jpg);
-   height: 100vh;
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
+
+nav .logo {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    color: black;
 }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+/* hamburger */
+
+.menu-toggle {
+display: none;
+flex-direction: column;
+height: 20px;
+justify-content: space-between;
+position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    height: 28px;
+    width: 40px;
+     left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: maroon;
+}
+
+/* Hamburger menu animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:last-child{
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+   
+}
+
+.menu-toggle input:checked ~ span:last-child{
+    transform: rotate(-45deg) translate(1px, 0);
+    
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span {
+    background-color: white;
+}
+
+/* layar hp */
+@media screen and (max-width:576px){
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        flex-direction: column;
+        background-color: black;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: 1s;
+        opacity: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    nav ul.slide {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
